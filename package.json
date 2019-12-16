@@ -5,8 +5,10 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:example:prod": "ng build example-material-dayjs-adapter --prod",
     "test": "ng test",
     "lint": "ng lint",
+    "stats": "yarn build:example:prod --namedChunks --statsJson && webpack-bundle-analyzer dist/example-material-dayjs-adapter/stats-es2015.json",
     "e2e": "ng e2e"
   },
   "private": true,
@@ -32,6 +34,7 @@
     "@angular/cli": "~8.3.20",
     "@angular/compiler-cli": "~8.2.14",
     "@angular/language-service": "~8.2.14",
+    "@angular/material-moment-adapter": "^8.2.3",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
@@ -44,11 +47,13 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
+    "moment": "^2.24.0",
     "ng-packagr": "^5.4.0",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tsickle": "^0.37.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.5.3"
+    "typescript": "~3.5.3",
+    "webpack-bundle-analyzer": "^3.6.0"
   }
 }
