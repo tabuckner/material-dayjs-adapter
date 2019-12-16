@@ -1,6 +1,6 @@
 # MaterialDayjsAdapter
 
-An adapter to use [Dayjs]() instead of [MomentJS]() in an effort to [reduce dependency size](#dependency-size-reduction). Currently only supports the default locale as this is all I needed for my implementation. Feel free to create an issue or submit a PR if you would like to see support for other Dayjs locales/plugins added.
+An adapter to use [Dayjs](https://github.com/iamkun/dayjs) instead of [MomentJS](https://github.com/moment/moment/) in an effort to [reduce dependency size](#dependency-size-reduction). Currently only supports the default locale as this is all I needed for my implementation. Feel free to create an issue or submit a PR if you would like to see support for other Dayjs locales/plugins added.
 
 If coming from [@angular/material-moment-adapter](https://github.com/angular/components/tree/master/src/material-moment-adapter), using the default locale and UTC plugins you can reduce your dependency size by *~560kb*
 
@@ -12,7 +12,7 @@ This library was generated with [Angular CLI](https://github.com/angular/angular
 MomentJS comes bundled with a lot of stuff that you may not need--for instance, locales. If you find that MaterialDayJsAdapter suits your needs well, you could see some substantial size cost savings. In most situations you will see a reduction of ~560kb in webpack-bundle-analyzer.
 
 ### An Example Project
-Using a brand new app generated with the [@angular/cli](https://www.npmjs.com/package/@angular/cli), an app was set up using both MomentJS Date Adapter and Dayjs Date Adapter. Production build statics were then analyzed with [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer).
+Using a brand new app generated with the [@angular/cli](https://www.npmjs.com/package/@angular/cli), an app was set up using both MomentJS Date Adapter and Dayjs Date Adapter. Production build statistics were then analyzed with [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer).
 
 #### Stats
 | Chunk Name                    | MomentJS | Dayjs   | Size Reduction |
