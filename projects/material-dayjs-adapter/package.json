@@ -1,8 +1,10 @@
 {
-  "name": "material-dayjs-adapter",
+  "name": "@tabuckner/material-dayjs-adapter",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/common": "^8.2.14",
-    "@angular/core": "^8.2.14"
+    "@angular/common": "^7.2.15",
+    "@angular/core": "^7.2.15",
+    "@angular/material": "^7.3.7",
+    "dayjs": "^1.8.17"
   }
 }

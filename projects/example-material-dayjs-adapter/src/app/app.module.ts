@@ -5,14 +5,11 @@ import { FormsModule } from '@angular/forms';
 import {
   MatDatepickerModule,
   MatFormFieldModule,
-  MatNativeDateModule,
   MatInputModule,
-  DateAdapter,
-  MAT_DATE_LOCALE,
-  MAT_DATE_FORMATS
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
+import { MatDayjsDateModule, MAT_DAYJS_DATE_ADAPTER_OPTIONS } from 'material-dayjs-adapter';
 
 @NgModule({
   declarations: [
@@ -25,9 +22,11 @@ import { AppComponent } from './app.component';
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,
-    MatNativeDateModule,
+    MatDayjsDateModule
   ],
-  providers: [],
+  providers: [
+    { provide: MAT_DAYJS_DATE_ADAPTER_OPTIONS, useValue: { useUtc: true } }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
