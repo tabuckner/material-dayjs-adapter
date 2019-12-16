@@ -9,7 +9,7 @@ Heavily inspired by [@angular/material-moment-adapter](https://github.com/angula
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.14.
 
 ## Dependency Size Reduction
-MomentJS comes bundled with a lot of stuff that you may not need--for instance, locales. If you find that MaterialDayJsAdapter suits your needs well, you could see some substantial size cost savings. In most situations you will see a reduction of ~560kb.
+MomentJS comes bundled with a lot of stuff that you may not need--for instance, locales. If you find that MaterialDayJsAdapter suits your needs well, you could see some substantial size cost savings. In most situations you will see a reduction of ~560kb in webpack-bundle-analyzer.
 
 ### An Example Project
 Using a brand new app generated with the [@angular/cli](https://www.npmjs.com/package/@angular/cli), an app was set up using both MomentJS Date Adapter and Dayjs Date Adapter. Production build statics were then analyzed with [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer).
