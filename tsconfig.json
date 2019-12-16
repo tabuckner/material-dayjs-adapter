@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "material-dayjs-adapter": [
+        "dist/material-dayjs-adapter"
+      ],
+      "material-dayjs-adapter/*": [
+        "dist/material-dayjs-adapter/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
