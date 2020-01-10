@@ -1,7 +1,10 @@
 import { Optional, Inject, InjectionToken } from '@angular/core';
 import { DateAdapter, MAT_DATE_LOCALE } from '@angular/material';
 import dayjs, { Dayjs } from 'dayjs';
-import * as utc from 'dayjs/plugin/utc';
+import utc from 'dayjs/plugin/utc';
+import localeData from 'dayjs/plugin/localeData';
+import LocalizedFormat from 'dayjs/plugin/localizedFormat';
+import customParseFormat from 'dayjs/plugin/customParseFormat';
 
 
 export interface DayJsDateAdapterOptions {
@@ -13,7 +16,7 @@ export interface DayJsDateAdapterOptions {
   useUtc?: boolean;
 }
 
-/** InjectionToken for moment date adapter to configure options. */
+/** InjectionToken for dayjs date adapter to configure options. */
 export const MAT_DAYJS_DATE_ADAPTER_OPTIONS = new InjectionToken<DayJsDateAdapterOptions>(
   'MAT_DAYJS_DATE_ADAPTER_OPTIONS', {
   providedIn: 'root',
@@ -55,21 +58,26 @@ export class DayjsDateAdapter extends DateAdapter<Dayjs> {
     if (this.shouldUseUtc) {
       dayjs.extend(utc);
     }
+
+    dayjs.extend(LocalizedFormat);
+    dayjs.extend(customParseFormat);
+    dayjs.extend(localeData);
+
     this.setLocale(dateLocale);
   }
 
-  // TODO: Implement
   setLocale(locale: string) {
     super.setLocale(locale);
 
+    let dayJsLocaleData = this.dayJs().localeData();
     this.localeData = {
-      firstDayOfWeek: +this.dayJs().startOf('week').format('d'),
-      longMonths: range(12, (i) => this.dayJs().set('month', i).format('MMMM')),
-      shortMonths: range(12, (i) => this.dayJs().set('month', i).format('MMM')),
+      firstDayOfWeek: dayJsLocaleData.firstDayOfWeek(),
+      longMonths: dayJsLocaleData.months(),
+      shortMonths: dayJsLocaleData.monthsShort(),
       dates: range(31, (i) => this.createDate(2017, 0, i + 1).format('D')),
       longDaysOfWeek: range(7, (i) => this.dayJs().set('day', i).format('dddd')),
-      shortDaysOfWeek: range(7, (i) => this.dayJs().set('day', i).format('ddd')),
-      narrowDaysOfWeek: range(7, (i) => this.dayJs().set('day', i).format('dd')),
+      shortDaysOfWeek: dayJsLocaleData.weekdaysShort(),
+      narrowDaysOfWeek: dayJsLocaleData.weekdaysMin(),
     };
   }
 
@@ -135,16 +143,18 @@ export class DayjsDateAdapter extends DateAdapter<Dayjs> {
     return this.dayJs();
   }
 
-  // TODO: Handle locales here.
   parse(value: any, parseFormat: string): Dayjs | null {
-    return value ? this.dayJs(value, parseFormat) : null;
+    if (value && typeof value == 'string') {
+      return this.dayJs(value, dayjs().localeData().longDateFormat(parseFormat), this.locale);
+    }
+    return value ? this.dayJs(value).locale(this.locale) : null;
   }
 
   format(date: Dayjs, displayFormat: string): string {
     if (!this.isValid(date)) {
-      throw Error('MomentDateAdapter: Cannot format invalid date.');
+      throw Error('DayjsDateAdapter: Cannot format invalid date.');
     }
-    return date.format(displayFormat);
+    return date.locale(this.locale).format(displayFormat);
   }
 
   addCalendarYears(date: Dayjs, years: number): Dayjs {
@@ -203,13 +213,12 @@ export class DayjsDateAdapter extends DateAdapter<Dayjs> {
     return this.dayJs(date).isValid();
   }
 
-  // TODO: How to create an invalid Dayjs object?
   invalid(): Dayjs {
-    return;
+    return this.dayJs(null);
   }
 
-  private dayJs(input?: any, format?: string): Dayjs {
-    return this.shouldUseUtc ? dayjs.utc(input, format) : dayjs(input, format);
+  private dayJs(input?: any, format?: string, locale?: string): Dayjs {
+    return this.shouldUseUtc ? dayjs(input, { format: format, locale: locale, utc: this.shouldUseUtc }, locale).utc() : dayjs(input, { format: format, locale: locale }, locale);
   }
 
   private get shouldUseUtc(): boolean {

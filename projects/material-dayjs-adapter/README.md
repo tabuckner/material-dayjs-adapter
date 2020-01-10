@@ -1,6 +1,6 @@
 # MaterialDayjsAdapter
 
-An adapter to use [Dayjs]() instead of [MomentJS]() in an effort to [reduce dependency size](#dependency-size-reduction). Currently only supports the default locale as this is all I needed for my implementation. Feel free to create an issue or submit a PR if you would like to see support for other Dayjs locales/plugins added.
+An adapter to use [Dayjs]() instead of [MomentJS]() in an effort to [reduce dependency size](#dependency-size-reduction). Feel free to create an issue or submit a PR.
 
 If coming from [@angular/material-moment-adapter](https://github.com/angular/components/tree/master/src/material-moment-adapter), using the default locale and UTC plugins you can reduce your dependency size by *~560kb*
 
@@ -39,7 +39,7 @@ Minimal Project with Dayjs Date Adapter
 ## How To Use
 ### Import Module
 ```typescript
-import { MatDayjsDateModule } from 'material-dayjs-adapter';
+import { MatDayjsDateModule } from '@tabuckner/material-dayjs-adapter';
 
 @NgModule({
  ...
@@ -54,9 +54,31 @@ import { MatDayjsDateModule } from 'material-dayjs-adapter';
 export class AppModule { }
 ```
 
+### Localization
+Import the locales you need from DayJS and set the current locale 
+1. Globally for DayJS
+2. To the Date Adapter itself
+For example in your AppComponent:
+```typescript
+import { DateAdapter } from '@angular/material';
+import dayjs, { Dayjs } from 'dayjs';
+import 'dayjs/locale/nl';
+...
+export class AppComponent {
+  constructor(private dateAdapter: DateAdapter<Dayjs>) { 
+    this.setLocale('nl');
+  }
+
+  setLocale(locale: string) {
+    dayjs.locale(locale);
+    this.dateAdapter.setLocale(locale);
+  }
+...
+```
+
 ### Optionally Provide A Configuration
 ```typescript
-import { MatDayjsDateModule, MAT_DAYJS_DATE_ADAPTER_OPTIONS } from 'material-dayjs-adapter';
+import { MatDayjsDateModule, MAT_DAYJS_DATE_ADAPTER_OPTIONS } from '@tabuckner/material-dayjs-adapter';
 @NgModule({
   ...
   providers: [
