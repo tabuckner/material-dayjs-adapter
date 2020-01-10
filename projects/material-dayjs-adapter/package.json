@@ -23,9 +23,9 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@angular/common": "^7.2.15",
-    "@angular/core": "^7.2.15",
-    "@angular/material": "^7.3.7",
+    "@angular/common": "^8.2.14",
+    "@angular/core": "^8.2.14",
+    "@angular/material": "^8.2.3",
     "dayjs": "^1.8.17"
   },
   "repository": {
