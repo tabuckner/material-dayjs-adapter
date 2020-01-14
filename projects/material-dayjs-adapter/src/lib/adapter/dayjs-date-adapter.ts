@@ -13,7 +13,7 @@ export interface DayJsDateAdapterOptions {
   useUtc?: boolean;
 }
 
-/** InjectionToken for moment date adapter to configure options. */
+/** InjectionToken for Dayjs date adapter to configure options. */
 export const MAT_DAYJS_DATE_ADAPTER_OPTIONS = new InjectionToken<DayJsDateAdapterOptions>(
   'MAT_DAYJS_DATE_ADAPTER_OPTIONS', {
   providedIn: 'root',
@@ -142,7 +142,7 @@ export class DayjsDateAdapter extends DateAdapter<Dayjs> {
 
   format(date: Dayjs, displayFormat: string): string {
     if (!this.isValid(date)) {
-      throw Error('MomentDateAdapter: Cannot format invalid date.');
+      throw Error('DayjsDateAdapter: Cannot format invalid date.');
     }
     return date.format(displayFormat);
   }
@@ -203,9 +203,8 @@ export class DayjsDateAdapter extends DateAdapter<Dayjs> {
     return this.dayJs(date).isValid();
   }
 
-  // TODO: How to create an invalid Dayjs object?
   invalid(): Dayjs {
-    return;
+    return this.dayJs(null);
   }
 
   private dayJs(input?: any, format?: string): Dayjs {
