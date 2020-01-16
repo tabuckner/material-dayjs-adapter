@@ -3,3 +3,9 @@
   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
   <mat-datepicker #picker></mat-datepicker>
 </mat-form-field>
+<div>
+  <input type="button" (click)="setLocale('nl')" value="Switch locale to Dutch">
+</div>
+<div>
+  <input type="button" (click)="setLocale('de')" value="Switch locale to German">
+</div>
