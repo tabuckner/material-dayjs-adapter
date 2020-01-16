@@ -1,6 +1,6 @@
 # MaterialDayjsAdapter
 
-An adapter to use [Dayjs](https://github.com/iamkun/dayjs) instead of [MomentJS](https://github.com/moment/moment/) in an effort to [reduce dependency size](#dependency-size-reduction). Currently only supports the default locale as this is all I needed for my implementation. Feel free to create an issue or submit a PR if you would like to see support for other Dayjs locales/plugins added.
+An adapter to use [Dayjs]() instead of [MomentJS]() in an effort to [reduce dependency size](#dependency-size-reduction). Feel free to create an issue or submit a PR. 
 
 If coming from [@angular/material-moment-adapter](https://github.com/angular/components/tree/master/src/material-moment-adapter), using the default locale and UTC plugins you can reduce your dependency size by *~560kb*
 
@@ -67,6 +67,30 @@ import { MatDayjsDateModule, MAT_DAYJS_DATE_ADAPTER_OPTIONS } from '@tabuckner/m
 export class AppModule { }
 ```
 
+### Localization
+*A big Thank You to [@vanrossumict](https://github.com/vanrossumict)*
+
+Import the locales you need from DayJS and set the current locale 
+1. Globally for DayJS
+2. To the Date Adapter itself
+For example in your AppComponent:
+```typescript
+import { DateAdapter } from '@angular/material';
+import dayjs, { Dayjs } from 'dayjs';
+import 'dayjs/locale/nl';
+...
+export class AppComponent {
+  constructor(private dateAdapter: DateAdapter<Dayjs>) { 
+    this.setLocale('nl');
+  }
+  setLocale(locale: string) {
+    dayjs.locale(locale);
+    this.dateAdapter.setLocale(locale);
+  }
+...
+```
+
+
 #### Currently Supported Options
 ```typescript
 export interface DayJsDateAdapterOptions {
@@ -100,3 +124,5 @@ Run `ng test material-dayjs-adapter` to execute the unit tests via [Karma](https
 ### Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Contributors
