@@ -1,10 +1,16 @@
 {
   "name": "@tabuckner/material-dayjs-adapter",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": {
     "name": "Taylor Buckner",
     "url": "https://github.com/tabuckner/"
   },
+  "contributors": [
+    {
+      "name": "Jan van Rossum",
+      "url": "https://github.com/vanrossumict"
+    }
+  ],
   "description": "A MatDateAdapter for Dayjs to reduce dependency sizes when compared to MomentJS based adapters.",
   "keywords": [
     "angular",
