@@ -15,7 +15,12 @@
             "tsConfig": "projects/material-dayjs-adapter/tsconfig.lib.json",
             "project": "projects/material-dayjs-adapter/ng-package.json"
           }
-        },
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "projects/material-dayjs-adapter/tsconfig.lib.prod.json"
+            }
+          }
+},
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
@@ -57,7 +62,7 @@
             "main": "projects/example-material-dayjs-adapter/src/main.ts",
             "polyfills": "projects/example-material-dayjs-adapter/src/polyfills.ts",
             "tsConfig": "projects/example-material-dayjs-adapter/tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "projects/example-material-dayjs-adapter/src/favicon.ico",
               "projects/example-material-dayjs-adapter/src/assets"
@@ -81,7 +86,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
