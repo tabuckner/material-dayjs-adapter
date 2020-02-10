@@ -1,5 +1,5 @@
 import { Optional, Inject, InjectionToken } from '@angular/core';
-import { DateAdapter, MAT_DATE_LOCALE } from '@angular/material';
+import { DateAdapter, MAT_DATE_LOCALE } from '@angular/material/core';
 import dayjs, { Dayjs } from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 import localeData from 'dayjs/plugin/localeData';
