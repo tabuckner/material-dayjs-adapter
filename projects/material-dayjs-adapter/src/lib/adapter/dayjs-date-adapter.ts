@@ -51,7 +51,7 @@ export class DayjsDateAdapter extends DateAdapter<Dayjs> {
   };
 
   constructor(@Optional() @Inject(MAT_DATE_LOCALE) public dateLocale: string,
-    @Optional() @Inject(MAT_DAYJS_DATE_ADAPTER_OPTIONS) private options?: DayJsDateAdapterOptions) {
+              @Optional() @Inject(MAT_DAYJS_DATE_ADAPTER_OPTIONS) private options?: DayJsDateAdapterOptions) {
     super();
 
     // Initialize DayJS-Parser

@@ -14,13 +14,13 @@
           "options": {
             "tsConfig": "projects/material-dayjs-adapter/tsconfig.lib.json",
             "project": "projects/material-dayjs-adapter/ng-package.json"
-          }
-        ,          "configurations": {
+          },
+          "configurations": {
             "production": {
               "tsConfig": "projects/material-dayjs-adapter/tsconfig.lib.prod.json"
             }
           }
-},
+        },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
@@ -167,5 +167,8 @@
       }
     }
   },
-  "defaultProject": "material-dayjs-adapter"
+  "defaultProject": "material-dayjs-adapter",
+  "cli": {
+    "analytics": "acf38e11-aba7-4ae9-9acf-9d5c26c72d8c"
+  }
 }
