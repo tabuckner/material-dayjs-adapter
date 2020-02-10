@@ -37,6 +37,51 @@ Minimal Project with Dayjs Date Adapter
 ![dayjs date adapter bundle size analyzer graph](https://i.imgur.com/F26dh4O.png)
 ![dayjs cli stats](https://i.imgur.com/VAiQFCM.png)
 
+## Schematics
+As of [v1.0.0](https://www.npmjs.com/package/@tabuckner/material-dayjs-adapter/v/1.0.0), some schematics were added to make usage a bit more congruent with Angular Library standards. 
+
+### NgAdd
+We have very basic NgAdd support that will install app dependencies.
+(Please [submit an issue](https://github.com/tabuckner/material-dayjs-adapter/issues/new) if you think updating the AppRoot's NgModule with the proper imports would be a nice feature!)
+
+```bash
+ng add @tabuckner/material-dayjs-adapter
+```
+
+### DatFormats
+In the event you would like to make use of custom [Date Formats](), a schematic has been added to make the generation of these files a bit easier.
+
+#### Command
+```bash
+ng g @tabuckner/material-dayjs-adapter:date-formats
+```
+
+#### Options
+* --path: The path to create the file at.
+* --project: The name of the project.
+
+#### What It Does
+This will create mat-dayjs-date-formats.ts at the current file path (or an optionally specified path) with the following contents:
+
+```typescript
+import { MatDateFormats } from '@angular/material/core';
+
+/**
+ * Custom Date-Formats and Adapter (using https://github.com/iamkun/dayjs)
+ */
+export const MAT_DAYJS_DATE_FORMATS: MatDateFormats = {
+  parse: {
+    dateInput: 'MM/DD/YYYY',
+  },
+  display: {
+    dateInput: 'MM/DD/YYYY',
+    monthYearLabel: 'MMM YYYY',
+    dateA11yLabel: 'LL',
+    monthYearA11yLabel: 'MMMM YYYY',
+  }
+};
+```
+(Please [submit an issue](https://github.com/tabuckner/material-dayjs-adapter/issues/new) if you think updating the AppRoot's NgModule with the proper imports would be a nice feature!)
 
 ## How To Use
 ### Import Module
