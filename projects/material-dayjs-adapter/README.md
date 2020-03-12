@@ -116,7 +116,7 @@ Run `ng build material-dayjs-adapter` to build the project. The build artifacts 
 
 ### Publishing
 
-After building your library with `ng build material-dayjs-adapter`, go to the dist folder `cd dist/material-dayjs-adapter` and run `npm publish`.
+Publishing is currently handled through a dead simple CD process powered by [semantic-release](https://semantic-release.gitbook.io/semantic-release/).
 
 ### Running unit tests
 
