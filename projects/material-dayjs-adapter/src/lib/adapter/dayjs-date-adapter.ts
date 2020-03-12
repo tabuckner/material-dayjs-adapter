@@ -182,7 +182,7 @@ export class DayjsDateAdapter extends DateAdapter<Dayjs> {
     if (value instanceof Date) {
       date = this.dayJs(value);
     } else if (this.isDateInstance(value)) {
-      // Note: assumes that cloning also sets the correct locale.
+      // NOTE: assumes that cloning also sets the correct locale.
       return this.clone(value);
     }
     if (typeof value === 'string') {
