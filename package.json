@@ -4,7 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:example": "yarn start example-material-dayjs-adapter --ssl",
     "build": "ng build",
+    "build:lib": "yarn build material-dayjs-adapter",
     "build:example:prod": "ng build example-material-dayjs-adapter --prod",
     "test": "ng test",
     "lint": "ng lint",
@@ -29,7 +31,7 @@
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.803.20",
+    "@angular-devkit/build-angular": "^0.803.25",
     "@angular-devkit/build-ng-packagr": "~0.803.20",
     "@angular/cli": "~8.3.20",
     "@angular/compiler-cli": "~8.2.14",
