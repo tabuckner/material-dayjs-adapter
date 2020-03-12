@@ -1,0 +1,39 @@
+language: node_js
+node_js:
+  - lts/*
+sudo: required
+before_install:
+  - sudo apt-key adv --fetch-keys http://dl.yarnpkg.com/debian/pubkey.gpg
+  - echo "deb http://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+  - sudo apt-get update -qq
+  - sudo apt-get install -y -qq yarn
+install:
+  - yarn install
+cache:
+  yarn: true
+  npm: true
+  directories:
+    - node_modules
+    # TODO: Add each project's node modules dir.
+script:
+  - yarn ci
+after_success:
+  # - bash <(curl -s https://codecov.io/bash)
+  # - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then yarn build:docs && yarn build fi
+  # - if [ "$TRAVIS_BRANCH" = "develop" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then yarn build:docs; fi
+# gh-pages:
+#   provider: pages
+#   skip_cleanup: true
+#   github_token: '$GITHUB_TOKEN'
+#   keep_history: true
+#   local_dir: docs
+#   committer_from_gh: true
+#   on:
+#     branch: develop
+deploy:
+  provider: script
+  skip_cleanup: true
+  script:
+    - yarn build:lib && npx semantic-release
+  on:
+    branch: master
