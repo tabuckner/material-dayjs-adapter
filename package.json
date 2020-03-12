@@ -1,6 +1,6 @@
 {
   "name": "material-dayjs-adapter",
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -12,7 +12,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "stats": "yarn build:example:prod --namedChunks --statsJson && webpack-bundle-analyzer dist/example-material-dayjs-adapter/stats-es2015.json",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "semantic-release": "semantic-release"
   },
   "private": true,
   "dependencies": {
@@ -84,5 +85,9 @@
         }
       ]
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tabuckner/material-dayjs-adapter.git"
   }
 }
