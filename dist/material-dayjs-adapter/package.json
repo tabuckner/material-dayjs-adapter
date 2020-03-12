@@ -1,0 +1,53 @@
+{
+  "name": "@tabuckner/material-dayjs-adapter",
+  "version": "1.0.0",
+  "author": {
+    "name": "Taylor Buckner",
+    "url": "https://github.com/tabuckner/"
+  },
+  "contributors": [
+    {
+      "name": "Jan van Rossum",
+      "url": "https://github.com/vanrossumict"
+    }
+  ],
+  "description": "A MatDateAdapter for Dayjs to reduce dependency sizes when compared to MomentJS based adapters.",
+  "keywords": [
+    "angular",
+    "angular-material",
+    "material",
+    "datepicker",
+    "mat-datepicker",
+    "momentjs",
+    "dayjs",
+    "adapter",
+    "mat-date-adapter",
+    "date",
+    "iso",
+    "utc",
+    "typescript"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/common": ">= 7.2.15",
+    "@angular/core": ">= 7.2.15",
+    "@angular/material": ">= 7.3.7",
+    "dayjs": ">= 1.8.17"
+  },
+  "repository": {
+    "url": "https://github.com/tabuckner/material-dayjs-adapter"
+  },
+  "main": "bundles/tabuckner-material-dayjs-adapter.umd.js",
+  "module": "fesm5/tabuckner-material-dayjs-adapter.js",
+  "es2015": "fesm2015/tabuckner-material-dayjs-adapter.js",
+  "esm5": "esm5/tabuckner-material-dayjs-adapter.js",
+  "esm2015": "esm2015/tabuckner-material-dayjs-adapter.js",
+  "fesm5": "fesm5/tabuckner-material-dayjs-adapter.js",
+  "fesm2015": "fesm2015/tabuckner-material-dayjs-adapter.js",
+  "typings": "tabuckner-material-dayjs-adapter.d.ts",
+  "metadata": "tabuckner-material-dayjs-adapter.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}
