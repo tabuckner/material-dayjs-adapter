@@ -54,17 +54,8 @@ export class DayjsDateAdapter extends DateAdapter<Dayjs> {
               @Optional() @Inject(MAT_DAYJS_DATE_ADAPTER_OPTIONS) private options?: DayJsDateAdapterOptions) {
     super();
 
-    // Initialize DayJS-Parser
-    if (this.shouldUseUtc) {
-      dayjs.extend(utc);
+    this.initializeParser(dateLocale);
     }
-
-    dayjs.extend(LocalizedFormat);
-    dayjs.extend(customParseFormat);
-    dayjs.extend(localeData);
-
-    this.setLocale(dateLocale);
-  }
 
   // TODO: Implement
   setLocale(locale: string) {
@@ -228,5 +219,17 @@ export class DayjsDateAdapter extends DateAdapter<Dayjs> {
   private get shouldUseUtc(): boolean {
     const { useUtc }: DayJsDateAdapterOptions = this.options || {};
     return !!useUtc;
+  }
+
+  private initializeParser(dateLocale: string) {
+    if (this.shouldUseUtc) {
+      dayjs.extend(utc);
+    }
+
+    dayjs.extend(LocalizedFormat);
+    dayjs.extend(customParseFormat);
+    dayjs.extend(localeData);
+
+    this.setLocale(dateLocale);
   }
 }
