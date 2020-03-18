@@ -1,6 +1,6 @@
 {
   "name": "material-dayjs-adapter",
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,10 +8,12 @@
     "build": "ng build",
     "build:lib": "yarn build material-dayjs-adapter",
     "build:example:prod": "ng build example-material-dayjs-adapter --prod",
+    "ci": "yarn lint",
     "test": "ng test",
     "lint": "ng lint",
     "stats": "yarn build:example:prod --namedChunks --statsJson && webpack-bundle-analyzer dist/example-material-dayjs-adapter/stats-es2015.json",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "semantic-release": "semantic-release"
   },
   "private": true,
   "dependencies": {
@@ -52,9 +54,38 @@
     "moment": "^2.24.0",
     "ng-packagr": "^9.0.0",
     "protractor": "~5.4.0",
+    "semantic-release": "^17.0.4",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.7.5",
     "webpack-bundle-analyzer": "^3.6.0"
+  },
+  "release": {
+    "branches": [
+      "master"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/npm",
+        {
+          "pkgRoot": "./dist/material-dayjs-adapter"
+        }
+      ],
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "./dist/material-dayjs-adapter/package.json"
+          ],
+          "message": "Release <%= nextRelease.version %> - <%= new Date().toLocaleDateString('en-US', {year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' }) %> [skip ci]\n\n<%= nextRelease.notes %>"
+        }
+      ]
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tabuckner/material-dayjs-adapter.git"
   }
 }
