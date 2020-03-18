@@ -64,7 +64,7 @@
     "branches": [
       "master",
       {
-        "name": "rc",
+        "name": "next",
         "prerelease": true
       }
     ],
