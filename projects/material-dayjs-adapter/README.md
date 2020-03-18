@@ -174,3 +174,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Contributors
 [@vanrossumict](https://github.com/vanrossumict) - [Localization PR](https://github.com/tabuckner/material-dayjs-adapter/pull/1)
+[@ranyehushua](https://github.com/ranyehushua) - [Initialization Bug Fix](https://github.com/tabuckner/material-dayjs-adapter/pull/9)
