@@ -1,13 +1,6 @@
 {
   "name": "@tabuckner/material-dayjs-adapter",
-  "version": "1.0.0",
-  "schematics": "./schematics/collection.json",
-  "scripts": {
-    "build": "../../node_modules/.bin/tsc -p tsconfig.schematics.json",
-    "copy": "../../node_modules/.bin/cpy schematics/**/{collection.json,schema.json,files/**} ../../dist/material-dayjs-adapter --parents",
-    "postbuild": "npm run copy",
-    "clean:dist": "rm -rf ../../dist/material-dayjs-adapter"
-  },
+  "version": "1.1.0",
   "author": {
     "name": "Taylor Buckner",
     "url": "https://github.com/tabuckner/"
@@ -36,13 +29,25 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@angular/common": ">=8.0.0",
-    "@angular/core": ">=8.0.0",
-    "@angular/material": ">=8.0.0",
+    "@angular/common": ">= 7.2.15",
+    "@angular/core": ">= 7.2.15",
+    "@angular/material": ">= 7.3.7",
     "dayjs": ">= 1.8.17"
   },
   "repository": {
     "url": "https://github.com/tabuckner/material-dayjs-adapter"
   },
-  "devDependencies": {}
+  "main": "bundles/tabuckner-material-dayjs-adapter.umd.js",
+  "module": "fesm5/tabuckner-material-dayjs-adapter.js",
+  "es2015": "fesm2015/tabuckner-material-dayjs-adapter.js",
+  "esm5": "esm5/tabuckner-material-dayjs-adapter.js",
+  "esm2015": "esm2015/tabuckner-material-dayjs-adapter.js",
+  "fesm5": "fesm5/tabuckner-material-dayjs-adapter.js",
+  "fesm2015": "fesm2015/tabuckner-material-dayjs-adapter.js",
+  "typings": "tabuckner-material-dayjs-adapter.d.ts",
+  "metadata": "tabuckner-material-dayjs-adapter.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
 }
