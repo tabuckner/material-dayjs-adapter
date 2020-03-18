@@ -9,7 +9,7 @@ Heavily inspired by [@angular/material-moment-adapter](https://github.com/angula
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.14.
 
-### THIS IS THE README FOR v1.x.x COMPATIBLE WITH ANGULAR 8+. CLICK [HERE](https://www.npmjs.com/package/@tabuckner/material-dayjs-adapter/v/0.0.7) FOR ANGULAR 7 SUPPORTED VERSION.
+### THIS IS THE README FOR v2.x.x COMPATIBLE WITH ANGULAR 8+. CLICK [HERE](https://www.npmjs.com/package/@tabuckner/material-dayjs-adapter/v/1.1.0) FOR LAST ANGULAR 7 SUPPORTED VERSION.
 
 ## Dependency Size Reduction
 MomentJS comes bundled with a lot of stuff that you may not need--for instance, locales. If you find that MaterialDayJsAdapter suits your needs well, you could see some substantial size cost savings. In most situations you will see a reduction of ~560kb in webpack-bundle-analyzer.
@@ -39,7 +39,7 @@ Minimal Project with Dayjs Date Adapter
 ![dayjs cli stats](https://i.imgur.com/VAiQFCM.png)
 
 ## Schematics
-As of [v1.0.0](https://www.npmjs.com/package/@tabuckner/material-dayjs-adapter/v/1.0.0), some schematics were added to make usage a bit more congruent with Angular Library standards. 
+As of [v2.x.x](https://www.npmjs.com/package/@tabuckner/material-dayjs-adapter/v/1.0.0), schematics support was added to make usage a bit more congruent with Angular Library standards. 
 
 ### NgAdd
 We have very basic NgAdd support that will install app dependencies.
@@ -176,3 +176,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Contributors
 [@vanrossumict](https://github.com/vanrossumict) - [Localization PR](https://github.com/tabuckner/material-dayjs-adapter/pull/1)
 [@ranyehushua](https://github.com/ranyehushua) - [Initialization Bug Fix](https://github.com/tabuckner/material-dayjs-adapter/pull/9)
+[@ranyehushua](https://github.com/ranyehushua) - [Testing Angular 9 Upgrade](https://github.com/tabuckner/material-dayjs-adapter/pull/18)
