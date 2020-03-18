@@ -123,7 +123,7 @@ Import the locales you need from DayJS and set the current locale
 2. To the Date Adapter itself
 For example in your AppComponent:
 ```typescript
-import { DateAdapter } from '@angular/material';
+import { DateAdapter } from '@angular/material/core';
 import dayjs, { Dayjs } from 'dayjs';
 import 'dayjs/locale/nl';
 ...
