@@ -1,6 +1,13 @@
 {
   "name": "@tabuckner/material-dayjs-adapter",
-  "version": "0.0.7",
+  "version": "1.0.0",
+  "schematics": "./schematics/collection.json",
+  "scripts": {
+    "build": "../../node_modules/.bin/tsc -p tsconfig.schematics.json",
+    "copy": "../../node_modules/.bin/cpy schematics/**/{collection.json,schema.json,files/**} ../../dist/material-dayjs-adapter --parents",
+    "postbuild": "npm run copy",
+    "clean:dist": "rm -rf ../../dist/material-dayjs-adapter"
+  },
   "author": {
     "name": "Taylor Buckner",
     "url": "https://github.com/tabuckner/"
@@ -29,12 +36,13 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@angular/common": ">= 7.2.15",
-    "@angular/core": ">= 7.2.15",
-    "@angular/material": ">= 7.3.7",
+    "@angular/common": ">=8.0.0",
+    "@angular/core": ">=8.0.0",
+    "@angular/material": ">=8.0.0",
     "dayjs": ">= 1.8.17"
   },
   "repository": {
     "url": "https://github.com/tabuckner/material-dayjs-adapter"
-  }
+  },
+  "devDependencies": {}
 }

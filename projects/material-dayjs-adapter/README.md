@@ -9,6 +9,8 @@ Heavily inspired by [@angular/material-moment-adapter](https://github.com/angula
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.14.
 
+### THIS IS THE README FOR v1.x.x COMPATIBLE WITH ANGULAR 8+. CLICK [HERE](https://www.npmjs.com/package/@tabuckner/material-dayjs-adapter/v/0.0.7) FOR ANGULAR 7 SUPPORTED VERSION.
+
 ## Dependency Size Reduction
 MomentJS comes bundled with a lot of stuff that you may not need--for instance, locales. If you find that MaterialDayJsAdapter suits your needs well, you could see some substantial size cost savings. In most situations you will see a reduction of ~560kb in webpack-bundle-analyzer.
 
@@ -36,6 +38,51 @@ Minimal Project with Dayjs Date Adapter
 ![dayjs date adapter bundle size analyzer graph](https://i.imgur.com/F26dh4O.png)
 ![dayjs cli stats](https://i.imgur.com/VAiQFCM.png)
 
+## Schematics
+As of [v1.0.0](https://www.npmjs.com/package/@tabuckner/material-dayjs-adapter/v/1.0.0), some schematics were added to make usage a bit more congruent with Angular Library standards. 
+
+### NgAdd
+We have very basic NgAdd support that will install app dependencies.
+(Please [submit an issue](https://github.com/tabuckner/material-dayjs-adapter/issues/new) if you think updating the AppRoot's NgModule with the proper imports would be a nice feature!)
+
+```bash
+ng add @tabuckner/material-dayjs-adapter
+```
+
+### DatFormats
+In the event you would like to make use of custom [Date Formats](), a schematic has been added to make the generation of these files a bit easier.
+
+#### Command
+```bash
+ng g @tabuckner/material-dayjs-adapter:date-formats
+```
+
+#### Options
+* --path: The path to create the file at.
+* --project: The name of the project.
+
+#### What It Does
+This will create mat-dayjs-date-formats.ts at the current file path (or an optionally specified path) with the following contents:
+
+```typescript
+import { MatDateFormats } from '@angular/material/core';
+
+/**
+ * Custom Date-Formats and Adapter (using https://github.com/iamkun/dayjs)
+ */
+export const MAT_DAYJS_DATE_FORMATS: MatDateFormats = {
+  parse: {
+    dateInput: 'MM/DD/YYYY',
+  },
+  display: {
+    dateInput: 'MM/DD/YYYY',
+    monthYearLabel: 'MMM YYYY',
+    dateA11yLabel: 'LL',
+    monthYearA11yLabel: 'MMMM YYYY',
+  }
+};
+```
+(Please [submit an issue](https://github.com/tabuckner/material-dayjs-adapter/issues/new) if you think updating the AppRoot's NgModule with the proper imports would be a nice feature!)
 
 ## How To Use
 ### Import Module

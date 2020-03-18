@@ -1,0 +1,18 @@
+{
+  "$schema": "../../../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "ng-add": {
+      "description": "Add material-dayjs-adapter to the project.",
+      "factory": "./ng-add/index#ngAdd"
+    },
+    "ng-update": {
+      "description": "Update material-dayjs-adapter.",
+      "factory": "./ng-update/index#ngUpdate"
+    },
+    "date-formats": {
+      "description": "Date formats to be used with material-dayjs-adapter",
+      "factory": "./date-formats/index#dateFormats",
+      "schema": "./date-formats/schema.json"
+    }
+  }
+}
