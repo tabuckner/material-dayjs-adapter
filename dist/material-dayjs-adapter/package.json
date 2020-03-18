@@ -1,6 +1,7 @@
 {
   "name": "@tabuckner/material-dayjs-adapter",
-  "version": "1.1.0",
+  "version": "2.0.0-next.1",
+  "schematics": "./schematics/collection.json",
   "author": {
     "name": "Taylor Buckner",
     "url": "https://github.com/tabuckner/"
@@ -29,10 +30,11 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@angular/common": ">= 7.2.15",
-    "@angular/core": ">= 7.2.15",
-    "@angular/material": ">= 7.3.7",
-    "dayjs": ">= 1.8.17"
+    "@angular/common": ">=8.0.0",
+    "@angular/core": ">=8.0.0",
+    "@angular/material": ">=8.0.0",
+    "dayjs": ">= 1.8.17",
+    "tslib": "^1.10.0"
   },
   "repository": {
     "url": "https://github.com/tabuckner/material-dayjs-adapter"
@@ -45,9 +47,8 @@
   "fesm5": "fesm5/tabuckner-material-dayjs-adapter.js",
   "fesm2015": "fesm2015/tabuckner-material-dayjs-adapter.js",
   "typings": "tabuckner-material-dayjs-adapter.d.ts",
-  "metadata": "tabuckner-material-dayjs-adapter.metadata.json",
   "sideEffects": false,
-  "dependencies": {
-    "tslib": "^1.9.0"
+  "scripts": {
+    "prepublishOnly": "node --eval \"console.error('ERROR: Trying to publish a package that has been compiled by Ivy. This is not allowed.\\nPlease delete and rebuild the package, without compiling with Ivy, before attempting to publish.\\n')\" && exit 1"
   }
 }
