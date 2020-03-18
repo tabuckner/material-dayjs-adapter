@@ -1,5 +1,5 @@
 # MaterialDayjsAdapter
-[![Build Status](https://travis-ci.org/tabuckner/material-dayjs-adapter.svg?branch=master)](https://travis-ci.org/tabuckner/material-dayjs-adapter)
+[![Build Status](https://travis-ci.com/tabuckner/material-dayjs-adapter.svg?branch=master)](https://travis-ci.org/tabuckner/material-dayjs-adapter)
 
 An adapter to use [Dayjs]() instead of [MomentJS]() in an effort to [reduce dependency size](#dependency-size-reduction). Feel free to create an issue or submit a PR. 
 
