@@ -55,7 +55,7 @@
     "moment": "^2.24.0",
     "ng-packagr": "^5.4.0",
     "protractor": "~5.4.0",
-    "semantic-release": "^17.0.4",
+    "semantic-release": "^17.2.3",
     "ts-node": "~7.0.0",
     "tsickle": "^0.37.0",
     "tslint": "~5.15.0",
