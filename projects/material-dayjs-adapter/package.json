@@ -34,6 +34,9 @@
     "@angular/material": ">= 7.3.7",
     "dayjs": ">= 1.8.17"
   },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
   "repository": {
     "url": "https://github.com/tabuckner/material-dayjs-adapter"
   }
