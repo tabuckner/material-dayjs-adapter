@@ -10,7 +10,7 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/material-dayjs-adapter/tsconfig.lib.json",
             "project": "projects/material-dayjs-adapter/ng-package.json"
@@ -20,7 +20,12 @@
               "tsConfig": "projects/material-dayjs-adapter/tsconfig.lib.prod.json"
             }
           }
-        },
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "projects/material-dayjs-adapter/tsconfig.lib.prod.json"
+            }
+          }
+},
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
@@ -62,16 +67,21 @@
             "main": "projects/example-material-dayjs-adapter/src/main.ts",
             "polyfills": "projects/example-material-dayjs-adapter/src/polyfills.ts",
             "tsConfig": "projects/example-material-dayjs-adapter/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "projects/example-material-dayjs-adapter/src/favicon.ico",
               "projects/example-material-dayjs-adapter/src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/@angular/material\/prebuilt-themes/indigo-pink.css",
               "projects/example-material-dayjs-adapter/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -84,7 +94,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -102,7 +111,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
