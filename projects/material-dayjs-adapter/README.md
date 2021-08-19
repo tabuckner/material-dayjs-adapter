@@ -1,5 +1,5 @@
 # MaterialDayjsAdapter
-[![Build Status](https://travis-ci.org/tabuckner/material-dayjs-adapter.svg?branch=master)](https://travis-ci.org/tabuckner/material-dayjs-adapter)
+[![Build Status](https://travis-ci.com/tabuckner/material-dayjs-adapter.svg?branch=master)](https://travis-ci.org/tabuckner/material-dayjs-adapter)
 
 An adapter to use [Dayjs]() instead of [MomentJS]() in an effort to [reduce dependency size](#dependency-size-reduction). Feel free to create an issue or submit a PR. 
 
@@ -8,6 +8,8 @@ If coming from [@angular/material-moment-adapter](https://github.com/angular/com
 Heavily inspired by [@angular/material-moment-adapter](https://github.com/angular/components/tree/master/src/material-moment-adapter) [NPM](https://www.npmjs.com/package/@angular/material-moment-adapter).
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.14.
+
+### THIS IS THE README FOR v2.x.x COMPATIBLE WITH ANGULAR 8+. CLICK [HERE](https://www.npmjs.com/package/@tabuckner/material-dayjs-adapter/v/1.1.0) FOR LAST ANGULAR 7 SUPPORTED VERSION.
 
 ## Dependency Size Reduction
 MomentJS comes bundled with a lot of stuff that you may not need--for instance, locales. If you find that MaterialDayJsAdapter suits your needs well, you could see some substantial size cost savings. In most situations you will see a reduction of ~560kb in webpack-bundle-analyzer.
@@ -36,6 +38,51 @@ Minimal Project with Dayjs Date Adapter
 ![dayjs date adapter bundle size analyzer graph](https://i.imgur.com/F26dh4O.png)
 ![dayjs cli stats](https://i.imgur.com/VAiQFCM.png)
 
+## Schematics
+As of [v2.x.x](https://www.npmjs.com/package/@tabuckner/material-dayjs-adapter/v/1.0.0), schematics support was added to make usage a bit more congruent with Angular Library standards. 
+
+### NgAdd
+We have very basic NgAdd support that will install app dependencies.
+(Please [submit an issue](https://github.com/tabuckner/material-dayjs-adapter/issues/new) if you think updating the AppRoot's NgModule with the proper imports would be a nice feature!)
+
+```bash
+ng add @tabuckner/material-dayjs-adapter
+```
+
+### DatFormats
+In the event you would like to make use of custom [Date Formats](), a schematic has been added to make the generation of these files a bit easier.
+
+#### Command
+```bash
+ng g @tabuckner/material-dayjs-adapter:date-formats
+```
+
+#### Options
+* --path: The path to create the file at.
+* --project: The name of the project.
+
+#### What It Does
+This will create mat-dayjs-date-formats.ts at the current file path (or an optionally specified path) with the following contents:
+
+```typescript
+import { MatDateFormats } from '@angular/material/core';
+
+/**
+ * Custom Date-Formats and Adapter (using https://github.com/iamkun/dayjs)
+ */
+export const MAT_DAYJS_DATE_FORMATS: MatDateFormats = {
+  parse: {
+    dateInput: 'MM/DD/YYYY',
+  },
+  display: {
+    dateInput: 'MM/DD/YYYY',
+    monthYearLabel: 'MMM YYYY',
+    dateA11yLabel: 'LL',
+    monthYearA11yLabel: 'MMMM YYYY',
+  }
+};
+```
+(Please [submit an issue](https://github.com/tabuckner/material-dayjs-adapter/issues/new) if you think updating the AppRoot's NgModule with the proper imports would be a nice feature!)
 
 ## How To Use
 ### Import Module
@@ -76,7 +123,7 @@ Import the locales you need from DayJS and set the current locale
 2. To the Date Adapter itself
 For example in your AppComponent:
 ```typescript
-import { DateAdapter } from '@angular/material';
+import { DateAdapter } from '@angular/material/core';
 import dayjs, { Dayjs } from 'dayjs';
 import 'dayjs/locale/nl';
 ...
@@ -129,3 +176,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Contributors
 [@vanrossumict](https://github.com/vanrossumict) - [Localization PR](https://github.com/tabuckner/material-dayjs-adapter/pull/1)
 [@ranyehushua](https://github.com/ranyehushua) - [Initialization Bug Fix](https://github.com/tabuckner/material-dayjs-adapter/pull/9)
+[@ranyehushua](https://github.com/ranyehushua) - [Testing Angular 9 Upgrade](https://github.com/tabuckner/material-dayjs-adapter/pull/18)

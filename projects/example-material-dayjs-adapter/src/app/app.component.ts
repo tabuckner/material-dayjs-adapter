@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DateAdapter } from '@angular/material';
+import { DateAdapter } from '@angular/material/core';
 import dayjs, { Dayjs } from 'dayjs';
 import 'dayjs/locale/nl';
 import 'dayjs/locale/de';
