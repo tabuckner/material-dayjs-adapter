@@ -34,6 +34,8 @@ deploy:
   provider: script
   skip_cleanup: true
   script:
-    - yarn build:lib && npx semantic-release
+    - yarn build:lib --prod && npx semantic-release
   on:
-    branch: master
+    branch:
+      - master
+      - next
