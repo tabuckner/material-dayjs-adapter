@@ -137,7 +137,7 @@ export class DayjsDateAdapter extends DateAdapter<Dayjs> {
 
   parse(value: any, parseFormat: string): Dayjs | null {
     if (value && typeof value === 'string') {
-      return this.dayJs(value, dayjs().localeData().longDateFormat(parseFormat), this.locale);
+      return this.dayJs(value, parseFormat, this.locale);
     }
     return value ? this.dayJs(value).locale(this.locale) : null;
   }
