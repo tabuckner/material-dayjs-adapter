@@ -10,7 +10,7 @@ Heavily inspired by [@angular/material-moment-adapter](https://github.com/angula
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.2.
 
 ### THIS IS THE README FOR v3.x.x COMPATIBLE WITH ANGULAR 13+. 
-- CLICK [HERE](https://www.npmjs.com/package/@tabuckner/material-dayjs-adapter/v/2.0.1) FOR LAST ANGULAR 8 SUPPORTED VERSION.
+- CLICK [HERE](https://www.npmjs.com/package/@tabuckner/material-dayjs-adapter/v/2.0.0) FOR LAST ANGULAR 8 SUPPORTED VERSION.
 - CLICK [HERE](https://www.npmjs.com/package/@tabuckner/material-dayjs-adapter/v/1.1.0) FOR LAST ANGULAR 7 SUPPORTED VERSION.
 
 ## Dependency Size Reduction
@@ -179,4 +179,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 [@vanrossumict](https://github.com/vanrossumict) - [Localization PR](https://github.com/tabuckner/material-dayjs-adapter/pull/1)
 [@ranyehushua](https://github.com/ranyehushua) - [Initialization Bug Fix](https://github.com/tabuckner/material-dayjs-adapter/pull/9)
 [@ranyehushua](https://github.com/ranyehushua) - [Testing Angular 9 Upgrade](https://github.com/tabuckner/material-dayjs-adapter/pull/18)
-[@DaveA-W](https://github.com/DaveA-W) - [Testing Angular 13 Upgrade](https://github.com/tabuckner/material-dayjs-adapter/pull/TODO)
+
