@@ -1,6 +1,6 @@
 {
   "name": "@tabuckner/material-dayjs-adapter",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "schematics": "./schematics/collection.json",
   "scripts": {
     "build": "../../node_modules/.bin/tsc -p tsconfig.schematics.json",
@@ -16,6 +16,10 @@
     {
       "name": "Jan van Rossum",
       "url": "https://github.com/vanrossumict"
+    },
+    {
+      "name": "Dave A-W",
+      "url": "https://github.com/DaveA-W"
     }
   ],
   "description": "A MatDateAdapter for Dayjs to reduce dependency sizes when compared to MomentJS based adapters.",
@@ -36,9 +40,9 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@angular/common": ">=8.0.0",
-    "@angular/core": ">=8.0.0",
-    "@angular/material": ">=8.0.0",
+    "@angular/common": ">=13.0.0",
+    "@angular/core": ">=13.0.0",
+    "@angular/material": ">=13.0.0",
     "dayjs": ">= 1.8.17"
   },
   "repository": {
