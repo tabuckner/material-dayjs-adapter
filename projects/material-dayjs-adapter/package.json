@@ -48,5 +48,8 @@
   "repository": {
     "url": "https://github.com/tabuckner/material-dayjs-adapter"
   },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
   "devDependencies": {}
 }
