@@ -8,9 +8,8 @@
     "build": "ng build",
     "build:lib": "yarn build material-dayjs-adapter",
     "build:example:prod": "ng build example-material-dayjs-adapter --configuration production",
-    "ci": "yarn lint",
+    "ci": "ng test",
     "test": "ng test",
-    "lint": "ng lint",
     "stats": "yarn build:example:prod --namedChunks --statsJson && webpack-bundle-analyzer dist/example-material-dayjs-adapter/stats-es2015.json",
     "e2e": "ng e2e",
     "semantic-release": "semantic-release"
@@ -56,7 +55,6 @@
     "protractor": "~7.0.0",
     "semantic-release": "^17.0.4",
     "ts-node": "~7.0.0",
-    "tslint": "~6.1.0",
     "typescript": "~4.5.5",
     "webpack-bundle-analyzer": "^3.6.0"
   },
