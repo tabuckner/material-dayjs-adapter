@@ -33,7 +33,7 @@
     "@angular/common": ">=13.0.0",
     "@angular/core": ">=13.0.0",
     "@angular/material": ">=13.0.0",
-    "dayjs": ">= 1.8.17"
+    "dayjs": ">=1.8.17"
   },
   "repository": {
     "url": "https://github.com/tabuckner/material-dayjs-adapter"
