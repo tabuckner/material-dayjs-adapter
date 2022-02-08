@@ -1,6 +1,6 @@
 {
   "name": "@tabuckner/material-dayjs-adapter",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "schematics": "./schematics/collection.json",
   "author": {
     "name": "Taylor Buckner",
@@ -30,23 +30,38 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@angular/common": ">=8.0.0",
-    "@angular/core": ">=8.0.0",
-    "@angular/material": ">=8.0.0",
-    "dayjs": ">= 1.8.17",
-    "tslib": "^1.10.0"
+    "@angular/common": ">=13.0.0",
+    "@angular/core": ">=13.0.0",
+    "@angular/material": ">=13.0.0",
+    "dayjs": ">=1.8.17"
   },
   "repository": {
     "url": "https://github.com/tabuckner/material-dayjs-adapter"
   },
-  "main": "bundles/tabuckner-material-dayjs-adapter.umd.js",
-  "module": "fesm5/tabuckner-material-dayjs-adapter.js",
-  "es2015": "fesm2015/tabuckner-material-dayjs-adapter.js",
-  "esm5": "esm5/tabuckner-material-dayjs-adapter.js",
-  "esm2015": "esm2015/tabuckner-material-dayjs-adapter.js",
-  "fesm5": "fesm5/tabuckner-material-dayjs-adapter.js",
-  "fesm2015": "fesm2015/tabuckner-material-dayjs-adapter.js",
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
+  "module": "fesm2015/tabuckner-material-dayjs-adapter.mjs",
+  "es2020": "fesm2020/tabuckner-material-dayjs-adapter.mjs",
+  "esm2020": "esm2020/tabuckner-material-dayjs-adapter.mjs",
+  "fesm2020": "fesm2020/tabuckner-material-dayjs-adapter.mjs",
+  "fesm2015": "fesm2015/tabuckner-material-dayjs-adapter.mjs",
   "typings": "tabuckner-material-dayjs-adapter.d.ts",
-  "metadata": "tabuckner-material-dayjs-adapter.metadata.json",
-  "sideEffects": false
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./tabuckner-material-dayjs-adapter.d.ts",
+      "esm2020": "./esm2020/tabuckner-material-dayjs-adapter.mjs",
+      "es2020": "./fesm2020/tabuckner-material-dayjs-adapter.mjs",
+      "es2015": "./fesm2015/tabuckner-material-dayjs-adapter.mjs",
+      "node": "./fesm2015/tabuckner-material-dayjs-adapter.mjs",
+      "default": "./fesm2020/tabuckner-material-dayjs-adapter.mjs"
+    }
+  },
+  "sideEffects": false,
+  "scripts": {
+    "prepublishOnly": "node --eval \"console.error('ERROR: Trying to publish a package that has been compiled by Ivy in full compilation mode. This is not allowed.\\nPlease delete and rebuild the package with Ivy partial compilation mode, before attempting to publish.\\n')\" && exit 1"
+  }
 }

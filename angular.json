@@ -10,7 +10,7 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/material-dayjs-adapter/tsconfig.lib.json",
             "project": "projects/material-dayjs-adapter/ng-package.json"
@@ -30,14 +30,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "projects/material-dayjs-adapter/tsconfig.lib.json",
-              "projects/material-dayjs-adapter/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "projects/material-dayjs-adapter/**/*.ts",
+              "projects/material-dayjs-adapter/**/*.html"
             ]
           }
         }
@@ -62,7 +59,6 @@
             "main": "projects/example-material-dayjs-adapter/src/main.ts",
             "polyfills": "projects/example-material-dayjs-adapter/src/polyfills.ts",
             "tsConfig": "projects/example-material-dayjs-adapter/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "projects/example-material-dayjs-adapter/src/favicon.ico",
               "projects/example-material-dayjs-adapter/src/assets"
@@ -71,7 +67,13 @@
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/example-material-dayjs-adapter/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -84,7 +86,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -102,7 +103,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -139,19 +141,6 @@
             "scripts": []
           }
         },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/example-material-dayjs-adapter/tsconfig.app.json",
-              "projects/example-material-dayjs-adapter/tsconfig.spec.json",
-              "projects/example-material-dayjs-adapter/e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        },
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
@@ -163,12 +152,22 @@
               "devServerTarget": "example-material-dayjs-adapter:serve:production"
             }
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/example-material-dayjs-adapter/**/*.ts",
+              "projects/example-material-dayjs-adapter/**/*.html"
+            ]
+          }
         }
       }
     }
   },
   "defaultProject": "material-dayjs-adapter",
   "cli": {
-    "analytics": "acf38e11-aba7-4ae9-9acf-9d5c26c72d8c"
+    "analytics": "acf38e11-aba7-4ae9-9acf-9d5c26c72d8c",
+    "defaultCollection": "@angular-eslint/schematics"
   }
 }

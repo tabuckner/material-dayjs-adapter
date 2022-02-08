@@ -1,6 +1,6 @@
 {
   "name": "@tabuckner/material-dayjs-adapter",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "schematics": "./schematics/collection.json",
   "scripts": {
     "build": "../../node_modules/.bin/tsc -p tsconfig.schematics.json",
@@ -36,13 +36,16 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@angular/common": ">=8.0.0",
-    "@angular/core": ">=8.0.0",
-    "@angular/material": ">=8.0.0",
-    "dayjs": ">= 1.8.17"
+    "@angular/common": ">=13.0.0",
+    "@angular/core": ">=13.0.0",
+    "@angular/material": ">=13.0.0",
+    "dayjs": ">=1.8.17"
   },
   "repository": {
     "url": "https://github.com/tabuckner/material-dayjs-adapter"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
   },
   "devDependencies": {}
 }
