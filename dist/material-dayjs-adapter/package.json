@@ -38,9 +38,6 @@
   "repository": {
     "url": "https://github.com/tabuckner/material-dayjs-adapter"
   },
-  "dependencies": {
-    "tslib": "^2.0.0"
-  },
   "module": "fesm2015/tabuckner-material-dayjs-adapter.mjs",
   "es2020": "fesm2020/tabuckner-material-dayjs-adapter.mjs",
   "esm2020": "esm2020/tabuckner-material-dayjs-adapter.mjs",
@@ -61,6 +58,9 @@
     }
   },
   "sideEffects": false,
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
   "scripts": {
     "prepublishOnly": "node --eval \"console.error('ERROR: Trying to publish a package that has been compiled by Ivy in full compilation mode. This is not allowed.\\nPlease delete and rebuild the package with Ivy partial compilation mode, before attempting to publish.\\n')\" && exit 1"
   }
