@@ -23,6 +23,7 @@ export const MAT_DAYJS_DATE_ADAPTER_OPTIONS = new InjectionToken<DayJsDateAdapte
   factory: MAT_DAYJS_DATE_ADAPTER_OPTIONS_FACTORY
 });
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 export function MAT_DAYJS_DATE_ADAPTER_OPTIONS_FACTORY(): DayJsDateAdapterOptions {
   return {
     useUtc: false
@@ -41,13 +42,13 @@ function range<T>(length: number, valueFunction: (index: number) => T): T[] {
 /** Adapts Dayjs Dates for use with Angular Material. */
 export class DayjsDateAdapter extends DateAdapter<Dayjs> {
   private localeData: {
-    firstDayOfWeek: number,
-    longMonths: string[],
-    shortMonths: string[],
-    dates: string[],
-    longDaysOfWeek: string[],
-    shortDaysOfWeek: string[],
-    narrowDaysOfWeek: string[]
+    firstDayOfWeek: number;
+    longMonths: string[];
+    shortMonths: string[];
+    dates: string[];
+    longDaysOfWeek: string[];
+    shortDaysOfWeek: string[];
+    narrowDaysOfWeek: string[];
   };
 
   constructor(@Optional() @Inject(MAT_DATE_LOCALE) public dateLocale: string,
@@ -173,6 +174,7 @@ export class DayjsDateAdapter extends DateAdapter<Dayjs> {
    * method on all of it's `@Input()` properties that accept dates. It is therefore possible to
    * support passing values from your backend directly to these properties by overriding this method
    * to also deserialize the format used by your backend.
+   *
    * @param value The value to be deserialized into a date object.
    * @returns The deserialized date object, either a valid date, null if the value can be
    *     deserialized into a null date (e.g. the empty string), or an invalid date.

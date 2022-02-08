@@ -28,6 +28,15 @@
             "tsConfig": "projects/material-dayjs-adapter/tsconfig.spec.json",
             "karmaConfig": "projects/material-dayjs-adapter/karma.conf.js"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/material-dayjs-adapter/**/*.ts",
+              "projects/material-dayjs-adapter/**/*.html"
+            ]
+          }
         }
       }
     },
@@ -143,12 +152,22 @@
               "devServerTarget": "example-material-dayjs-adapter:serve:production"
             }
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/example-material-dayjs-adapter/**/*.ts",
+              "projects/example-material-dayjs-adapter/**/*.html"
+            ]
+          }
         }
       }
     }
   },
   "defaultProject": "material-dayjs-adapter",
   "cli": {
-    "analytics": "acf38e11-aba7-4ae9-9acf-9d5c26c72d8c"
+    "analytics": "acf38e11-aba7-4ae9-9acf-9d5c26c72d8c",
+    "defaultCollection": "@angular-eslint/schematics"
   }
 }
