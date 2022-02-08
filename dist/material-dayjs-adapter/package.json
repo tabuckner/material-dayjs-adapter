@@ -10,10 +10,6 @@
     {
       "name": "Jan van Rossum",
       "url": "https://github.com/vanrossumict"
-    },
-    {
-      "name": "Dave A-W",
-      "url": "https://github.com/DaveA-W"
     }
   ],
   "description": "A MatDateAdapter for Dayjs to reduce dependency sizes when compared to MomentJS based adapters.",
