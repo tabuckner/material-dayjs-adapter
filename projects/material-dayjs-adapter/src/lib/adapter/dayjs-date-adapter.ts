@@ -59,7 +59,7 @@ export class DayjsDateAdapter extends DateAdapter<Dayjs> {
     }
 
   // TODO: Implement
-  setLocale(locale: string) {
+  override setLocale(locale: string) {
     super.setLocale(locale);
 
     const dayJsLocaleData = this.dayJs().localeData();
@@ -179,7 +179,7 @@ export class DayjsDateAdapter extends DateAdapter<Dayjs> {
    * @returns The deserialized date object, either a valid date, null if the value can be
    *     deserialized into a null date (e.g. the empty string), or an invalid date.
    */
-  deserialize(value: any): Dayjs | null {
+   override deserialize(value: any): Dayjs | null {
     let date;
     if (value instanceof Date) {
       date = this.dayJs(value);
